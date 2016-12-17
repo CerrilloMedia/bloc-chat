@@ -14,8 +14,18 @@ body {
     color: black;               /* sets the text color to white */
     min-height: 100%;           /* says the height of the body must be, at minimum, 100% of the window */
     padding-bottom: 200px;
+    background: lightgray;
 }
 
 h1 {
-    color: dimgrey;
+    margin: .3em 0;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.logo img {
+    display: inline-block;
+    height: 2.5em;
 }
