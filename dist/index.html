@@ -6,13 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300">
     <link rel="stylesheet" type="text/css" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" type="text/css" href="/styles/normalize.css">
     <link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
 <body>
     <nav class="navbar"> <!-- navigation bar -->
+        <div class="add-new-room">
+            <input class="new-room-name" type="text" placeholder="new room name" >
+            <span class="ion-plus"></span>
+        </div>
         <a ui-sref="mainview" class="logo">
-            <img src="assets/images/bloc-chat-logo.png" alt="bloc chat logo">
+            <img src="assets/images/bloc-chat-logo.png" alt="bloc chat logo" />
         </a>
+        <ul class="navbar-links">
+            <li><a href="#" class="navbar-link">user_name</a></li>
+            <li><a href="#" class="navbar-link">available chat rooms</a></li>
+        </ul>
     </nav>
     
     <ui-view></ui-view>
@@ -37,8 +46,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <!-- AngularFire -->
 <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-<script src="/scripts/app.js"></script>
+<script src="/scripts/services/Room.js"></script>
 <script src="/scripts/controllers/MainviewCtrl.js"></script>
+<script src="/scripts/controllers/RoomsCtrl.js"></script>
+<script src="/scripts/app.js"></script>
     
 </body>
 </html>

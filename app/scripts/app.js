@@ -11,10 +11,15 @@
                 url: '/',
                 controller: 'MainviewCtrl as mainview',
                 templateUrl: '/templates/mainview.html'
+            })
+            .state('rooms', {
+                url: '/rooms',
+                controller: 'RoomsCtrl as rooms',
+                templateUrl: '/templates/rooms.html'
             });
-    }
     
     angular
         .module('blocChat', ['ui.router', 'firebase'])
         .config(config);
+    };
 })();
