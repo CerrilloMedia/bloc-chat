@@ -27,6 +27,8 @@ h1 {
     text-align: center;
     box-shadow: 3px 0 3px #000;
     padding: .3em;
+    background: rgba(211,211,211,1);
+    height: 3.3em;
 }
 
 .logo img {
@@ -46,8 +48,8 @@ h1 {
 .add-new-room {
     display: inline-block;
     position: fixed;
-    top: 1em;
-    left: .5em;    
+    left: .5em;
+    top: 0.8em;
 }
 
 .new-room-name {
@@ -55,8 +57,47 @@ h1 {
     background: none;
     border: 1px solid black;
     padding: .3em 0 .3em .3em;
+    font-size: .8em;
 }
 
 .ion-plus {
     color: red;
 }
+
+/* rooms.html */
+.rooms-sidebar {
+    display: block;
+    background: rgba(251, 109, 5, .7);
+    width: 25%;
+    max-width: 250px;
+    min-width: 200px;
+    position: absolute;
+    bottom: 0;
+    top: 3.3em;
+}
+
+.room-template {
+    background: #fb6d05;
+    width: 100%;
+    margin: .5em 0;
+    box-sizing: border-box;
+    padding: .5em;
+}
+
+.room-info {
+    
+}
+
+.room-title { 
+    display:inline-block;
+}
+.room-user-total {
+    display:block;
+    position: relative;
+    bottom:0;
+    right:0;
+    font-size: .7em;
+}
+
+
+

@@ -6,7 +6,7 @@
         return {
             all: rooms
         };
-    }
+    };
 
     angular
         .module('blocChat')

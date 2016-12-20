@@ -1,6 +1,7 @@
 (function() {
     function RoomsCtrl(Room) {
-        this.rooms = Room.all; // should be an array of objects?
+        this.all = Room.all; // should be an array of objects?
+        console.log(this.all);
     }
     
     angular

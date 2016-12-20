@@ -17,9 +17,9 @@
                 controller: 'RoomsCtrl as rooms',
                 templateUrl: '/templates/rooms.html'
             });
+    };
     
     angular
         .module('blocChat', ['ui.router', 'firebase'])
         .config(config);
-    };
 })();
