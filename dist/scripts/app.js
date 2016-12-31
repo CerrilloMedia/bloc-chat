@@ -8,18 +8,18 @@
         
         $stateProvider
             .state('mainview', {
-                url: '/',
-                controller: 'MainviewCtrl as mainview',
-                templateUrl: '/templates/mainview.html'
+                url: "/",
+                controller: "MainviewCtrl as mainview",
+                templateUrl: "/templates/mainview.html"
             })
             .state('rooms', {
-                url: '/rooms',
-                controller: 'RoomsCtrl as rooms',
-                templateUrl: '/templates/rooms.html'
+                url: "/rooms",
+                controller: "RoomsCtrl as rooms",
+                templateUrl: "/templates/roomsview.html"
             });
-    };
+    }
     
     angular
-        .module('blocChat', ['ui.router', 'firebase'])
+        .module('blocChat', ['firebase',  'ui.bootstrap', 'ui.router'])
         .config(config);
 })();
