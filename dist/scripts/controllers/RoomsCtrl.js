@@ -1,8 +1,12 @@
 (function() {
-	function RoomsCtrl(Room, $uibModal) {
-		this.all = Room.all;
+	function RoomsCtrl(Room, Message, $uibModal) {
+		this.all = Room.all; // < assign Room.all to a scope variable
 		
-		this.totalRooms = Room.totalRooms;
+		this.setActiveRoom = function(roomId){
+			this.messages = Message.getByRoomId(roomId);
+			console.log(roomId);
+		}
+		 
 		
         this.openModal = function() {
 			Room.newroomname = this.chatroomname;
@@ -18,5 +22,5 @@
 	
 	angular
 		.module('blocChat')
-		.controller('RoomsCtrl', ['Room', '$uibModal', RoomsCtrl]);
+		.controller('RoomsCtrl', ['Room', 'Message', '$uibModal', RoomsCtrl]);
 })();

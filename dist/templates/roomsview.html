@@ -1,8 +1,18 @@
 <div class="rooms-sidebar clear-fix">
     <div class="room-template" ng-repeat="room in rooms.all">
-        <div class="room-info">
+        <div class="room-info" ng-click="rooms.setActiveRoom(room.$id)" >
             <span class="room-title">{{ room.name }}</span>
-            <span class="room-user-total">total users: {{ room.user_total }}</span>
         </div>
     </div>
+</div>
+
+<div class="room-view" >
+	<div class="room-title-header">{{ rooms.$id.name }}</div>
+	<ul class="messages-container">
+		<li class="user-message" ng-repeat="message in rooms.messages">
+			<span class="username">{{message.username}}</span>
+			<span class="timestamp">{{message.sentAt}}</span>
+			<span class="content">{{message.content}}</span>
+		</li>
+	</ul>
 </div>

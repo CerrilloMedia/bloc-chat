@@ -3,9 +3,9 @@
 		
         var db = firebase.database();
         var roomsref = db.ref().child("rooms");
-        var usersref = db.ref().child("users");
+        // var usersref = db.ref().child("users");
         var rooms = $firebaseArray(roomsref);
-        var users = $firebaseArray(usersref);
+        // var users = $firebaseArray(usersref);
 		
 		var newroomname;
 		
