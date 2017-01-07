@@ -1,0 +1,10 @@
+<div class="modal-header">
+	<h3>Create a new chatroom</h3>
+</div>
+<div class="modal-body">
+	<input class="modal-room-name" ng-model="roommodal.newroomname" value="roommodal.newroomname" placeholder="new room name">
+</div>
+<div class="modal-footer">
+	<button class="btn btn-primary" type="button" ng-click="roommodal.addRoom(); roommodal.go('/rooms')">OK</button>
+	<button class="btn btn-warning" type="button" ng-click="roommodal.cancel()">cancel</button>
+</div>

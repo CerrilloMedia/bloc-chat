@@ -12,10 +12,10 @@
     <link rel="stylesheet" type="text/css" href="/styles/main.css">
 </head>
 <body>
-    <div class="nav-bar" ng-controller="RoomsCtrl as room"> <!-- navigation bar -->		
-		<div class="add-new-room">
+    <div class="nav-bar"> <!-- navigation bar -->		
+		<div class="add-new-room" ng-controller="RoomsCtrl as room">
 			<input class="new-room-name" type="text" ng-model="room.chatroomname" placeholder="new room name" title="enter new room name"/>
-			<button class="nav-new-room-button" ng-click="room.openModal()" title="add new room">
+			<button class="nav-new-room-button" ng-click="room.newroomopenModal()" title="add new room">
 				<span class="ion-plus"></span>
 			</button>
 		</div>
@@ -23,7 +23,7 @@
             <img src="assets/images/bloc-chat-logo.png" alt="bloc chat logo" />
         </a>
         <ul class="nav-bar-links">
-            <li><span class="chat-bar-link">user_name</span></li>
+            <li><span class="chat-bar-link">UserName</span></li>
             <li><a ui-sref="rooms" class="chat-bar-link" >your chat rooms</a></li>
         </ul>
     </div>
@@ -50,13 +50,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 <!-- AngularFire -->
 <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
-    
+<!-- Angular Cookies -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-cookies.js"></script>
+
 <script src="/scripts/app.js"></script>
 <script src="/scripts/services/Room.js"></script>
 <script src="/scripts/services/Message.js"></script>
+<script src="/scripts/services/BlocChatCookies.js"></script>
+<script src="/scripts/services/User.js"></script>
 <script src="/scripts/controllers/MainviewCtrl.js"></script>
 <script src="/scripts/controllers/RoomsCtrl.js"></script>
-<script src="/scripts/controllers/ModalCtrl.js"></script>
+<script src="/scripts/controllers/NewRoomModalCtrl.js"></script>
+<script src="/scripts/controllers/NewUserModalCtrl.js"></script>
+
     
 </body>
 </html>

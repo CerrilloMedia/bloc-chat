@@ -18,8 +18,8 @@
                 templateUrl: "/templates/roomsview.html"
             });
     }
-    
+	
     angular
-        .module('blocChat', ['firebase',  'ui.bootstrap', 'ui.router'])
+        .module('blocChat', ['firebase',  'ui.bootstrap', 'ui.router', 'ngCookies'])
         .config(config);
 })();

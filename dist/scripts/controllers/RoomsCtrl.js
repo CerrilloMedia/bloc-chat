@@ -4,17 +4,16 @@
 		
 		this.setActiveRoom = function(roomId){
 			this.messages = Message.getByRoomId(roomId);
-			console.log(roomId);
-		}
-		 
+		};
 		
-        this.openModal = function() {
+        this.newroomopenModal = function() {
 			Room.newroomname = this.chatroomname;
+			this.chatroomname = "";
 			
             $uibModal.open({
-                controller: 'ModalCtrl',
-                controllerAs: 'modal',
-                templateUrl: '/templates/modal.html',
+                controller: 'NewRoomModalCtrl',
+                controllerAs: 'roommodal',
+                templateUrl: '/templates/newroommodal.html',
                 size: 'sm'
 			});
 		};
