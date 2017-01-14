@@ -1,14 +1,14 @@
 (function() {
 	function NewUserModalCtrl($uibModalInstance, $cookies, User) {
 		
-		this.name = User.name;
+		this.name = null;
 		
 		this.addUser = function() {
 			if (this.name) {
 				$cookies.put('blocChatCurrentUser', this.name);
-				User.add(this.name);
+				
+				User.add(this.name)
 				$uibModalInstance.close();
-				console.log("submitted username: " + $cookies.get('blocChatCurrentUser'));
 			} else {
 				alert("please enter a valid name");
 			}

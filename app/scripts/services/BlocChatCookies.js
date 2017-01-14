@@ -1,7 +1,7 @@
 (function() {
 	function BlocChatCookies($cookies, $uibModal, User) {
-		var currentUser = $cookies.get('blocChatCurrentUser');
-		if (currentUser !== User.name) {
+		var currentUser = User.name;
+		if (!currentUser || currentUser === "visitor") {
 			// if user doesn' exist or name is empty
 			$uibModal.open({
                 controller: 'NewUserModalCtrl',

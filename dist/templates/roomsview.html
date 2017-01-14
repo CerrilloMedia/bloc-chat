@@ -1,18 +1,22 @@
 <div class="rooms-sidebar clear-fix">
     <div class="room-template" ng-repeat="room in rooms.all">
-        <div class="room-info" ng-click="rooms.setActiveRoom(room.$id)" >
-            <span class="room-title">{{ room.name }}</span>
+        <div class="room-info" ng-click="rooms.setActiveRoom(room.$id, room.name)">
+            <span class="room-title" ng-model="roomname" ng-value="room.name" ng-style="activeStyle">{{ room.name }}</span>
         </div>
     </div>
 </div>
 
-<div class="room-view" >
-	<div class="room-title-header">{{ rooms.$id.name }}</div>
+<div class="room-view" ng-show="rooms.active">
+	<div class="room-title-header">{{ rooms.name | uppercase }}</div>
 	<ul class="messages-container">
 		<li class="user-message" ng-repeat="message in rooms.messages">
 			<span class="username">{{message.username}}</span>
-			<span class="timestamp">{{message.sentAt}}</span>
+			<span class="timestamp">{{message.sentAt | date: 'hh:mm:ss' }}</span>
 			<span class="content">{{message.content}}</span>
 		</li>
 	</ul>
+	<div class="user-input">
+		<textarea class="input-message" ng-model="rooms.textinput" ng-keyup="$event.keyCode == 13 && rooms.submitMessage(rooms.textinput)"></textarea>
+		<button class="submit-message" ng-click="rooms.submitMessage(rooms.textinput)">Submit</button>
+	</div>
 </div>

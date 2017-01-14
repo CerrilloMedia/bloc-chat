@@ -14,7 +14,7 @@
 <body>
     <div class="nav-bar"> <!-- navigation bar -->		
 		<div class="add-new-room" ng-controller="RoomsCtrl as room">
-			<input class="new-room-name" type="text" ng-model="room.chatroomname" placeholder="new room name" title="enter new room name"/>
+			<input class="new-room-name" type="text" ng-model="room.chatroomname" ng-keyup="$event.keyCode == 13 && room.newroomopenModal()" placeholder="new room name" title="enter new room name"/>
 			<button class="nav-new-room-button" ng-click="room.newroomopenModal()" title="add new room">
 				<span class="ion-plus"></span>
 			</button>
@@ -22,8 +22,8 @@
         <a ui-sref="mainview" class="logo">
             <img src="assets/images/bloc-chat-logo.png" alt="bloc chat logo" />
         </a>
-        <ul class="nav-bar-links">
-            <li><span class="chat-bar-link">UserName</span></li>
+        <ul class="nav-bar-links" ng-controller="UsersCtrl as user">
+            <li><span class="chat-bar-link">Welcome, {{ user.name }}!</span></li>
             <li><a ui-sref="rooms" class="chat-bar-link" >your chat rooms</a></li>
         </ul>
     </div>
@@ -56,10 +56,11 @@
 <script src="/scripts/app.js"></script>
 <script src="/scripts/services/Room.js"></script>
 <script src="/scripts/services/Message.js"></script>
-<script src="/scripts/services/BlocChatCookies.js"></script>
 <script src="/scripts/services/User.js"></script>
+<script src="/scripts/services/BlocChatCookies.js"></script>
 <script src="/scripts/controllers/MainviewCtrl.js"></script>
 <script src="/scripts/controllers/RoomsCtrl.js"></script>
+<script src="/scripts/controllers/UsersCtrl.js"></script>
 <script src="/scripts/controllers/NewRoomModalCtrl.js"></script>
 <script src="/scripts/controllers/NewUserModalCtrl.js"></script>
 
