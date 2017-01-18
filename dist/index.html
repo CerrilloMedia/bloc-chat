@@ -23,7 +23,8 @@
             <img src="assets/images/bloc-chat-logo.png" alt="bloc chat logo" />
         </a>
         <ul class="nav-bar-links" ng-controller="UsersCtrl as user">
-            <li><span class="chat-bar-link">Welcome, {{ user.name }}!</span></li>
+            <li ng-hide="user.email" ng-show="user.name"><span class="chat-bar-link">Welcome, {{ user.name }}!</span></li>
+            <li ng-show="user.email" ng-hide="user.name"><span class="chat-bar-link">Welcome, {{ user.email }}!</span></li>
             <li><a ui-sref="rooms" class="chat-bar-link" >your chat rooms</a></li>
         </ul>
     </div>
@@ -57,6 +58,7 @@
 <script src="/scripts/services/Room.js"></script>
 <script src="/scripts/services/Message.js"></script>
 <script src="/scripts/services/User.js"></script>
+<script src="/scripts/services/MyAuthSvc.js"></script>
 <script src="/scripts/services/BlocChatCookies.js"></script>
 <script src="/scripts/controllers/MainviewCtrl.js"></script>
 <script src="/scripts/controllers/RoomsCtrl.js"></script>

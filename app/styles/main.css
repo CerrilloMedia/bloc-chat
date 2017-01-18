@@ -81,7 +81,6 @@ h1 {
 }
 
 /* modal new room */
-
 .modal-body, .modal-header, .modal-footer {
 	text-align: center;
 }
@@ -110,7 +109,6 @@ h1 {
 
 /* roomsview.html */
 /* sidebar css */
-
 .rooms-sidebar {
     display: inline-block;
     background: rgba(251, 109, 5, .7);
@@ -141,6 +139,27 @@ h1 {
     font-size: .7em;
 }
 
+
+/* User Login-modal */
+.modal-user-email {
+	margin: .3em 0;
+}
+
+.modal-user-pswd {
+	margin: .3em 0;
+}
+
+.login-btn {
+	background: rgb(100,100,100);
+}
+
+.pswd-btn {
+	background: rgb(100,100,100);
+}
+.login-error-message {
+	margin: 9px -20px 0px;
+    background: rgba(255,21,0,.6);
+}
 
 /* message view */
 .room-view {
@@ -207,3 +226,12 @@ h1 {
 }
 
 .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+
+@media screen and (max-width: 700px) {
+	.room-title {
+		font-size: .85em;
+	}
+	
+	
+}

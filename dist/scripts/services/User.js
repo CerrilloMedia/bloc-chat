@@ -5,7 +5,9 @@
 		var users = $firebaseArray(db);
 		
 		// test the login modal
-		var username = "visitor";
+		var username = null;
+		var email = null;
+		var signedIn = false;
 		
 		return {
 			add: function(username) {
@@ -15,7 +17,17 @@
 				});
 				this.name = username;
 			},
-			name: username
+			name: username,
+			email: email,
+			delete: function() {
+				/* add delete options here*/ 
+			},
+			signedIn: signedIn,
+			updateUserInfo: function(name, email, signedIn) {
+				this.name = name;
+				this.email = email;
+				this.signedIn = signedIn;
+			}
 		}
 	}
 	

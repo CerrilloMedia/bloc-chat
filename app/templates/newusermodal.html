@@ -1,10 +1,12 @@
 <div class="modal-header">
-	<h3>Choose a username:</h3>
-	<p>In order to access this site please enter a username</p>
+	<h3>Login or Sign-up</h3>
 </div>
 <div class="modal-body">
-	<input class="modal-user-name" ng-model="usermodal.name" value="usermodal.name" placeholder="username">
+	<input type="email" class="modal-user-email" ng-model="usermodal.email" value="usermodal.email" placeholder="e-mail">
+	<input type="text" class="modal-user-password" ng-model="usermodal.pswd" value="usermodal.pswd" placeholder="password">
 </div>
 <div class="modal-footer">
-	<button class="btn btn-primary" type="button" ng-click="usermodal.addUser()">OK</button>
+	<button class="login-btn btn btn-primary" type="button" ng-click="usermodal.addUser()">Sign Up</button>
+	<button class="pswd-btn btn btn-primary" type="button" ng-click="usermodal.logIn()">Log In</button>
+	<p class="login-error-message" ng-show="notification">Error: {{ notification }}</p>
 </div>
